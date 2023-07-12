@@ -27,3 +27,18 @@ sout.close();
 stdin.close();
 }
 }
+/** 
+OUTPUT:
+Server:
+E:\nwlab>javac *.java
+E:\nwlab>java chatserver
+Client : hi
+Server : hi
+Client:
+E:\nwlab>java chatclient
+Client : hi
+Server : hi
+Client :
+
+Result:
+CHAT application using TCP Socket is implemented successfully. **/
