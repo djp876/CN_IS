@@ -1,0 +1,148 @@
+Delivered-To: joelprakash04@gmail.com
+Received: by 2002:a05:7022:43a9:b0:68:246a:8838 with SMTP id bo41csp6370831dlb;
+        Wed, 12 Jul 2023 08:32:28 -0700 (PDT)
+X-Received: by 2002:a5d:9ec1:0:b0:783:6ff9:a6c7 with SMTP id a1-20020a5d9ec1000000b007836ff9a6c7mr17049262ioe.6.1689175947616;
+        Wed, 12 Jul 2023 08:32:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1689175947; cv=none;
+        d=google.com; s=arc-20160816;
+        b=sLdqojxhEnM9Te6hGbCeQrGLLmVPHkz2mMn5cS5Q0Y4ACX7KLkXztqm4vC4wydFF1k
+         TRV4kSW0Nr0TWGV3Q8j0bbntNXtZpgmIDdCf7MhtayYRoyz7MnXQ9YMGcFMg7zcB2QgT
+         uEhSpXXXWSPt7CB9xjKJby1dNGyvBo1paoEYeIoPMCW2X33z/EBJzXJrnyJqAlFrlTDh
+         XXBHRSRB40Gkpe9zmarF6cBiXVeDdnNTdbxCgsf58th0S59whom0YzMYwa7G/QSsoZBW
+         o/VqrUdCVRGhZSKWuV61ULCCwCJEjSJEpokzo7YBpyLyGsSTIPqsxl18Jdv+gFa5KJL6
+         ihkw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=wvptaRDQhBAFkdKbs785iJ94iCDaYL5MxNDfKZJ7VQ8=;
+        fh=eRR7rmdmviJ5/tmVTaBYavkZOAV1yi+3JmmVc/Bn16c=;
+        b=iH8rz5RY1nLgSRvS/9CEsOqolk58CWEjkDN5EGtmOdoD1N1B7KElgOBtt0ftQ2CtTZ
+         uIw4sSEXLDxua3/aC+YgksCVPnic1/Kiybun/rRZWNf0UNEligS+BnqWZmTrgTjyDya4
+         eQvShMIacMVkdvEf8kMe2yk+j2fCvDQ3ZpqxpxnLQRVHC8LYIsx5q6lftKkSdwzDKmip
+         xqEvMp5H7ecZno6p3Ad2FxM8A3Cz40nuCwmyR7DQ4bG7ox/mV+UhmiuE9XfdN4nFUZZe
+         ErqhJZRwwoWT0w+5GFb1a6vgYLlzJCQN34AucLT6bnO80U+6TF5nMpU10TinPUWN8OLm
+         6JCQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=LZZ9oBSp;
+       spf=pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=chereddy.mohana@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <chereddy.mohana@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id b4-20020a5d8944000000b00785d55a7d45sor791502iot.6.2023.07.12.08.32.27
+        for <joelprakash04@gmail.com>
+        (Google Transport Security);
+        Wed, 12 Jul 2023 08:32:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=LZZ9oBSp;
+       spf=pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=chereddy.mohana@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1689175947; x=1691767947;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=wvptaRDQhBAFkdKbs785iJ94iCDaYL5MxNDfKZJ7VQ8=;
+        b=LZZ9oBSpkAbswVaYjRJdHjO8v92o79q+ZtjJdedMi93CzoXfO8pPfduTS56T6iVCR0
+         NiZgukEw1dW+/NeD5cW8pjnXr5STr2cQWPvvtMR4JKEihNEmcHusZ3Gef9kl47RFJdp5
+         CI21FlnIGjy/Kxm9iMjeYON5eMiqIMFd4zD/kqp63nMzRF8Tj1NFiY63oFYC0KqRU3gn
+         3SIuCz+iw67QUvmHMAO0qGUT9z8OlCbM/QpppZI2ohFqJqeUvB1EUAHR819XMB2RkKMH
+         0nMh3L0vNXMEnzZeCHGcUZl2SAXuU2FC4h8WxcRf/QDGX2gAzVMsPe1yQH/vNWxgY6aQ
+         WerQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1689175947; x=1691767947;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wvptaRDQhBAFkdKbs785iJ94iCDaYL5MxNDfKZJ7VQ8=;
+        b=KgatbUsYX+52/+miY6ogNXmkbo7n0omE0+Ig6O2lLBQEq+RPTMHu0jbEGYe+cbGoD9
+         qeYmb44DN4+IE9zKWyCCe6YyTQRPq8YLXjLrLuBYh84/YwOf2nx3eUc1i5fyddq+zkrk
+         oSucCNjB+dWn4IjAtP1LtiAXRE1zIOxfkq8PI1wvn+wfztN+Fi34S44TgFtg+I1Wk5IB
+         ZGtYIMMS85VGe2L3o5LyAQklxR3QtIh/rsoPQUDoqhh3OGUo2IeYwp+UHYvXe/O7l+3b
+         ytdTgWoSTawOQsX7Bqo4mnn3GdWk7yRmsOyTOlju1kqY9vXySHGGiS8W2L3bIbNArzOj
+         NIHQ==
+X-Gm-Message-State: ABy/qLaxUIQDvwM6CAHStrMCM6HglP/I2Iblgdfr6oN+FqNTNETOKtwh
+	L/EyBsmmzFcLhGdCVZWH6behdpIqVn0epEIzoZJrS3vMyLo=
+X-Google-Smtp-Source: APBJJlESbsw9BibmmuueKeA9Wqg7+fOptef9slA7qFS+VaVUuv4eyOVwBWb5gWkbhtUmS51N7xhylD4ZeZJHv1d46ng=
+X-Received: by 2002:a6b:d90e:0:b0:783:57a0:612c with SMTP id
+ r14-20020a6bd90e000000b0078357a0612cmr20915936ioc.10.1689175946859; Wed, 12
+ Jul 2023 08:32:26 -0700 (PDT)
+MIME-Version: 1.0
+From: Y20CB013 <chereddy.mohana@gmail.com>
+Date: Wed, 12 Jul 2023 21:02:15 +0530
+Message-ID: <CAPXP+c3T977O4WUOgN6NpF_RCqQOVw3LnEw7rReQz2UBitpQBg@mail.gmail.com>
+Subject: CN prg1
+To: Joel <joelprakash04@gmail.com>
+Content-Type: multipart/mixed; boundary="00000000000046ba4a06004bec67"
+
+--00000000000046ba4a06004bec67
+Content-Type: multipart/alternative; boundary="00000000000046ba4706004bec65"
+
+--00000000000046ba4706004bec65
+Content-Type: text/plain; charset="UTF-8"
+
+Bit Stuffing
+
+--00000000000046ba4706004bec65
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Bit Stuffing</div>
+
+--00000000000046ba4706004bec65--
+--00000000000046ba4a06004bec67
+Content-Type: application/octet-stream; name="bit_stuffing.java"
+Content-Disposition: attachment; filename="bit_stuffing.java"
+Content-Transfer-Encoding: base64
+Content-ID: <f_ljzvqihi0>
+X-Attachment-Id: f_ljzvqihi0
+
+aW1wb3J0IGphdmEudXRpbC4qOw0KcHVibGljIGNsYXNzIGJpdF9zdHVmZmluZw0KICAgICAgew0K
+ICAgICAgcHVibGljIHN0YXRpYyB2b2lkIG1haW4oU3RyaW5nW10gYXJncykNCiAgICAgICAgew0K
+ICAgICAgICAgICAgICBTY2FubmVyIHNjPW5ldyBTY2FubmVyKFN5c3RlbS5pbik7DQogICAgICAg
+ICAgICAgIFN5c3RlbS5vdXQucHJpbnQoIkVudGVyIHRoZSBtZXNzYWdlOi0iKTsNCiAgICAgICAg
+ICAgICAgU3RyaW5nIGQxID0gc2MubmV4dExpbmUoKTsNCiAgICAgICAgICAgICAgU3RyaW5nIHJl
+bWFpbmluZyA9IG5ldyBTdHJpbmcoKTsNCiAgICAgICAgICAgICAgU3RyaW5nIG91dHB1dD1uZXcg
+U3RyaW5nKCk7DQogICAgICAgICAgICAgIGludCBjb3VudGVyID0gMDsNCiAgICAgICAgICAgICAg
+Zm9yKGludCBpPTA7aTxkMS5sZW5ndGgoKTtpKyspDQogICAgICAgICAgICAgICAgew0KICAgICAg
+ICAgICAgICAgICAgIGlmIChkMS5jaGFyQXQoaSkhPScxJyAmJiBkMS5jaGFyQXQoaSkhPScwJykN
+CiAgICAgICAgICAgICAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBT
+eXN0ZW0ub3V0LnByaW50bG4oIkVudGVyIHZhbGlkIEJpbmFyeSB2YWx1ZXMiKTsNCiAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICByZXR1cm47DQogICAgICAgICAgICAgICAgICAgICAgICB9DQog
+ICAgICAgICAgICAgICAgICAgaWYoZDEuY2hhckF0KGkpID09ICcxJykNCiAgICAgICAgICAgICAg
+ICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb3VudGVyKys7DQogICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgcmVtYWluaW5nID0gcmVtYWluaW5nICsgZDEuY2hhckF0
+KGkpOw0KICAgICAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgIGVsc2UN
+CiAgICAgICAgICAgICAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBy
+ZW1haW5pbmcgPSByZW1haW5pbmcgKyBkMS5jaGFyQXQoaSk7DQogICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgY291bnRlciA9IDA7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAg
+ICAgICAgICAgICAgaWYoY291bnRlciA9PSA1KQ0KICAgICAgICAgICAgICAgICAgICAgICAgew0K
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlbWFpbmluZyA9IHJlbWFpbmluZyArICcwJzsN
+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb3VudGVyID0gMDsNCiAgICAgICAgICAgICAg
+ICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICBTeXN0ZW0ub3V0LnBy
+aW50bG4oIkZsYWctLT4gMDExMTExMTAiKTsNCiAgICAgICAgICAgIFN0cmluZyBuZXcxPSJ8MDEx
+MTExMTAgfCAiK3JlbWFpbmluZysiIHwgMDExMTExMTB8IjsNCiAgICAgICAgICAgIFN5c3RlbS5v
+dXQucHJpbnRsbigiU3R1ZmZlZCBkYXRhIGF0IGludGVybWVkaWF0ZSBzaXRlIGlzOiIpOw0KICAg
+ICAgICAgICAgZm9yKGludCBrPTA7azw9KDI4K2QxLmxlbmd0aCgpKTtrKyspDQogICAgICAgICAg
+ICB7DQogICAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnQoIi0iKTsNCiAgICAgICAgICAgIH0N
+CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigpOw0KICAgICAgICAgICAgU3lzdGVtLm91
+dC5wcmludGxuKCIgIituZXcxKTsNCiAgICAgICAgICAgIGZvcihpbnQgaz0wO2s8PSgyOCtkMS5s
+ZW5ndGgoKSk7aysrKQ0KICAgICAgICAgICAgew0KICAgICAgICAgICAgICBTeXN0ZW0ub3V0LnBy
+aW50KCItIik7DQogICAgICAgICAgICB9DQogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4o
+KTsNCiAgICAgICAgICAgIGNvdW50ZXI9MDsNCiAgICAgICAgICAgIGZvcihpbnQgaT0wO2k8cmVt
+YWluaW5nLmxlbmd0aCgpO2krKykNCiAgICAgICAgICAgICAgICB7DQogICAgICAgICAgICAgICAg
+ICAgIGlmKHJlbWFpbmluZy5jaGFyQXQoaSkgPT0gJzEnKQ0KICAgICAgICAgICAgICAgICAgICAg
+ICAgew0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvdW50ZXIrKzsNCiAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBvdXRwdXQgPSBvdXRwdXQgKyByZW1haW5pbmcuY2hhckF0KGkpOw0K
+ICAgICAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBlbHNlDQogICAg
+ICAgICAgICAgICAgICAgICAgICB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgIG91dHB1
+dCA9IG91dHB1dCArIHJlbWFpbmluZy5jaGFyQXQoaSk7DQogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIGNvdW50ZXIgPSAwOw0KICAgICAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAg
+ICAgICAgICAgIGlmKGNvdW50ZXIgPT0gNSkNCiAgICAgICAgICAgICAgICAgICAgICAgIHsNCiAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKChpKzIpIT1yZW1haW5pbmcubGVuZ3RoKCkp
+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7DQogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIG91dHB1dCA9IG91dHB1dCArIHJlbWFpbmluZy5jaGFyQXQoaSsyKTsNCiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IGVsc2UNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsNCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgb3V0cHV0PW91dHB1dCArICcxJzsNCiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGk9aSsyOw0KICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgY291bnRlciA9IDE7DQogICAgICAgICAgICAgICAgICAg
+ICAgICB9DQogICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGxu
+KCJEZXN0dWZmZWQgQklUIGlzOiAiK291dHB1dCk7DQogICAgICAgfQ0KfQ==
+--00000000000046ba4a06004bec67--

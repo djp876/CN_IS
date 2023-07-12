@@ -1,0 +1,118 @@
+Delivered-To: joelprakash04@gmail.com
+Received: by 2002:a05:7022:43a9:b0:68:246a:8838 with SMTP id bo41csp6371703dlb;
+        Wed, 12 Jul 2023 08:33:43 -0700 (PDT)
+X-Received: by 2002:a5d:9f50:0:b0:783:57ae:1894 with SMTP id u16-20020a5d9f50000000b0078357ae1894mr17944095iot.9.1689176023419;
+        Wed, 12 Jul 2023 08:33:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1689176023; cv=none;
+        d=google.com; s=arc-20160816;
+        b=g66DGswf6vYF7OERn/eMwSc30ITx/Fzn091ykPKgi3mKVxQK0izidiGbAHkMZBl8n9
+         UFvsOxxJLDrDIxtx6LWlD5+XZXOZo9kbNwZP79L6C6PW/ub2RA7p287aGrD2vfMFIhVc
+         2Wh81v1FeVmPKCWPnk6E5dqwHqAnT4zH9mtosCM/dxiHWYbZgfPB1EZkHot1iZJ7nGD6
+         sITzMDs8dCrNKRfjJZemKeVjT8Hzd9A8tyI5bNoTXC/dEjpsCUyxXt/+JXHRIT6pggxE
+         9zdnPyvpRFCbE3AK6bqKzX0q11q7qyLwZghctkfeCiVZ7WA3oxcw9x9JoRTLolMp9E/L
+         81iQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=+qCC/r3otMZl9yp/BCtVzFNF2t18OnZiRHUYutkQ/uE=;
+        fh=eRR7rmdmviJ5/tmVTaBYavkZOAV1yi+3JmmVc/Bn16c=;
+        b=CpgS+SRngoVOT7bVB67JRwtHD+pRBgtg8gyPZ/w500cYEo1L6fYoptuiv750XTcO8x
+         84hndMiwh0eAkehsOyHvofDa24YnaHrhHSX66Cf6IjZh3SA5nxHCmgcuuAk8f+fzZebl
+         psVNdlwyyk0ERIjAPeYQdO9MmjRsr7KEBgEArDqzudGLwvxCoNFfjpGgqJp1umE7tGra
+         yE/5Qp5/x8hPl84Q78fvA6TaGgCgPSHUaiXeSftoh6/b7IIbAyLYfuWtM6zbMbByw/e/
+         Q0qFiiJ1ym9RJcM5UgiMwRUyL1SWEud6dsXKDCiNyBGZd7rI2i/FY/eCroIHrJNg68RW
+         AwVA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=oY1E6Nb6;
+       spf=pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=chereddy.mohana@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <chereddy.mohana@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id f2-20020a02cac2000000b0042b129cbe90sor565927jap.5.2023.07.12.08.33.43
+        for <joelprakash04@gmail.com>
+        (Google Transport Security);
+        Wed, 12 Jul 2023 08:33:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=oY1E6Nb6;
+       spf=pass (google.com: domain of chereddy.mohana@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=chereddy.mohana@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1689176023; x=1691768023;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=+qCC/r3otMZl9yp/BCtVzFNF2t18OnZiRHUYutkQ/uE=;
+        b=oY1E6Nb6xyCnlFQy2eGJXnHK3+jv91Ce7gr63ZLn4/fDYm3nBEaXj/qApE9ltmWTjX
+         P6K4QqcDcctr7ok358bmkg4wSouvdBQpqSVeeQrt7WbKBISjHo1ziQqXLOuOiTwyN2gJ
+         uIqQPXB9MnmgF6M2rjTdzfusuWyBL83aG1yN15D/NFjNzEshGNAL1kDbwG1bufpBOhdk
+         dROJk/7m6orFWZOniEQqcjz66R/uR0MfpeEp+R75YBKb6udk/EedwWjBGNn0c9SoOY3/
+         +atbev6Z6J27QzIzJ713i9vdvc9HBxGgPoADchU3MSB05kC/pRBiXjTEKfJrX3H3yedD
+         oe3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1689176023; x=1691768023;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+qCC/r3otMZl9yp/BCtVzFNF2t18OnZiRHUYutkQ/uE=;
+        b=JJINN/xlPE0WXTb0mu6jYl+Ef+aItgFap9nREdRJ4zeblWV4DNIKqYCACDewSq39Yi
+         /2scN+bgEZr/JDZUr9mH3/Zz3VTCjyKnI+70mcGSWHdcIon2WdBhWLqAjoY6Gwqygwv1
+         8gEdUb4zgkKr2tJlba1uPx2QwrVW8u5MRht5gpeoQrpbA9NS7DRRdRqiKExlKFjolltC
+         tDIShI/RhEkI0R9KI0gDVBdF/XrGj9OKj1pEhRkip9efzj0cLvC5WtlNpIr+aKwd1Vii
+         Hr05Hu2tOujB91LKwwzwKpmuQVEukj4k+vyeGYITs/aZC9XKxYSxSj2jzmkY5NXas0j8
+         lwcw==
+X-Gm-Message-State: ABy/qLbClUazJ5rcBZ7U/SeJVdBssj5WfknXxQizkUWBvJxyV4UvLXnp
+	W6EMSaCqgX15nI9r8DkjwfdAiJPuVFfrqPW45CUHtYHFJ0s=
+X-Google-Smtp-Source: APBJJlFFZzJ/Ui8nhlT4Z8GgSHMOpRtrchEtLrdguTC8tACMZd3i28BgtdmtbOgOGzg9W0X1bqPzxLruMHB4BwS6njI=
+X-Received: by 2002:a92:c64d:0:b0:345:aee1:eae2 with SMTP id
+ 13-20020a92c64d000000b00345aee1eae2mr17016764ill.20.1689176022873; Wed, 12
+ Jul 2023 08:33:42 -0700 (PDT)
+MIME-Version: 1.0
+From: Y20CB013 <chereddy.mohana@gmail.com>
+Date: Wed, 12 Jul 2023 21:03:31 +0530
+Message-ID: <CAPXP+c3HKB3EHaZG1491ujC8vUOhWafQu92y2tQ8Defv0Er1Kg@mail.gmail.com>
+Subject: CN prg4
+To: Joel <joelprakash04@gmail.com>
+Content-Type: multipart/mixed; boundary="000000000000ce9c8f06004bf082"
+
+--000000000000ce9c8f06004bf082
+Content-Type: multipart/alternative; boundary="000000000000ce9c8d06004bf080"
+
+--000000000000ce9c8d06004bf080
+Content-Type: text/plain; charset="UTF-8"
+
+Client Server interaction using socket
+
+--000000000000ce9c8d06004bf080
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Client Server interaction using socket</div>
+
+--000000000000ce9c8d06004bf080--
+--000000000000ce9c8f06004bf082
+Content-Type: application/octet-stream; name="Myclient.java"
+Content-Disposition: attachment; filename="Myclient.java"
+Content-Transfer-Encoding: base64
+Content-ID: <f_ljzvs5og1>
+X-Attachment-Id: f_ljzvs5og1
+
+aW1wb3J0IGphdmEuaW8uKjsgIA0KaW1wb3J0IGphdmEubmV0Lio7ICANCnB1YmxpYyBjbGFzcyBN
+eWNsaWVudCB7ICANCnB1YmxpYyBzdGF0aWMgdm9pZCBtYWluKFN0cmluZ1tdIGFyZ3MpIHsgIA0K
+dHJ5eyAgICAgIA0KU29ja2V0IHM9bmV3IFNvY2tldCgibG9jYWxob3N0Iiw2NjY2KTsgIA0KRGF0
+YU91dHB1dFN0cmVhbSBkb3V0PW5ldyBEYXRhT3V0cHV0U3RyZWFtKHMuZ2V0T3V0cHV0U3RyZWFt
+KCkpOyAgDQpkb3V0LndyaXRlVVRGKCJIZWxsbyBTZXJ2ZXIiKTsgIA0KZG91dC5mbHVzaCgpOyAg
+DQpkb3V0LmNsb3NlKCk7ICANCnMuY2xvc2UoKTsgIA0KfWNhdGNoKEV4Y2VwdGlvbiBlKXtTeXN0
+ZW0ub3V0LnByaW50bG4oZSk7fSAgDQp9ICANCn0gIA==
+--000000000000ce9c8f06004bf082
+Content-Type: application/octet-stream; name="Myserver.java"
+Content-Disposition: attachment; filename="Myserver.java"
+Content-Transfer-Encoding: base64
+Content-ID: <f_ljzvs5o60>
+X-Attachment-Id: f_ljzvs5o60
+
+aW1wb3J0IGphdmEuaW8uKjsgIA0KaW1wb3J0IGphdmEubmV0Lio7ICANCnB1YmxpYyBjbGFzcyBN
+eXNlcnZlciB7ICANCnB1YmxpYyBzdGF0aWMgdm9pZCBtYWluKFN0cmluZ1tdIGFyZ3MpeyAgDQp0
+cnl7ICANClNlcnZlclNvY2tldCBzcz1uZXcgU2VydmVyU29ja2V0KDY2NjYpOyAgDQpTb2NrZXQg
+cz1zcy5hY2NlcHQoKTsvL2VzdGFibGlzaGVzIGNvbm5lY3Rpb24gICANCkRhdGFJbnB1dFN0cmVh
+bSBkaXM9bmV3IERhdGFJbnB1dFN0cmVhbShzLmdldElucHV0U3RyZWFtKCkpOyAgDQpTdHJpbmcg
+IHN0cj0oU3RyaW5nKWRpcy5yZWFkVVRGKCk7ICANClN5c3RlbS5vdXQucHJpbnRsbigibWVzc2Fn
+ZT0gIitzdHIpOyAgDQpzcy5jbG9zZSgpOyAgDQp9Y2F0Y2goRXhjZXB0aW9uIGUpe1N5c3RlbS5v
+dXQucHJpbnRsbihlKTt9ICANCn0gIA0KfSAg
+--000000000000ce9c8f06004bf082--
