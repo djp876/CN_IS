@@ -1,0 +1,187 @@
+Aim: Explore any four network diagnosis tools.
+
+Description: Network diagnosis tools are software applications or hardware devices that are used to identify and troubleshoot problems on a computer network. These tools are designed to help network administrators and IT professionals diagnose network issues, identify network threats, and optimize network performance. Network diagnosis tools can take many forms, ranging from simple command-line utilities to complex graphical user interfaces. Some common types of network diagnosis tools include:
+
+Ping and Traceroute: These command-line utilities are used to test network connectivity and identify network routing issues.
+Network protocol analyzers: These tools capture and display network traffic in real-time, allowing network administrators to troubleshoot network protocols and identify network threats.
+Network scanners: These tools scan a network for open ports and vulnerable systems, allowing administrators to identify potential security risks.
+Performance monitoring tools: These tools monitor network traffic and performance metrics, allowing administrators to identify performance bottlenecks and optimize network performance.
+Configuration management tools: These tools are used to manage and automate network device configurations, allowing administrators to enforce network policies and ensure consistent network configuration. Overall, network diagnosis tools are essential for maintaining the health and security of computer networks. By using these tools to identify and troubleshoot network issues, administrators can minimize downtime, improve network performance, and ensure the integrity of network data.
+Tools:
+
+Ping Tools The ICMP ping tool is a basic network troubleshooting tool that lets you assess if a device is reachable on the network. It reports on errors such as packet loss, round-trip-time, etc.
+Z:\>ipconfig/all
+
+Windows IP Configuration
+
+    Host Name . . . . . . . . . . . . : nc1-65
+    Primary Dns Suffix  . . . . . . . : RVRCSE.LOCAL
+    Node Type . . . . . . . . . . . . : Hybrid
+    IP Routing Enabled. . . . . . . . : No
+    WINS Proxy Enabled. . . . . . . . : No
+    DNS Suffix Search List. . . . . . : RVRCSE.LOCAL
+
+Ethernet adapter Ethernet:
+
+    Connection-specific DNS Suffix  . :
+    Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+    Physical Address. . . . . . . . . : 48-0F-CF-44-3C-CB
+    DHCP Enabled. . . . . . . . . . . : No
+    Autoconfiguration Enabled . . . . : Yes
+    Link-local IPv6 Address . . . . . : fe80::d007:cdb:fee:d447%3(Preferred)
+    IPv4 Address. . . . . . . . . . . : 10.6.1.65(Preferred)
+    Subnet Mask . . . . . . . . . . . : 255.0.0.0
+    Default Gateway . . . . . . . . . : 10.1.1.4
+    DHCPv6 IAID . . . . . . . . . . . : 111185149
+    DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-91-B6-65-48-0F-CF-44-3C-CB
+    DNS Servers . . . . . . . . . . . : 10.10.10.100
+                                       10.1.1.4
+    NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Z:\>ping nc1-65
+
+Pinging nc1-65.RVRCSE.LOCAL [fe80::d007:cdb:fee:d447%3] with 32 bytes of data:
+
+Reply from fe80::d007:cdb:fee:d447%3: time<1ms
+
+Reply from fe80::d007:cdb:fee:d447%3: time<1ms
+
+Reply from fe80::d007:cdb:fee:d447%3: time<1ms
+
+Reply from fe80::d007:cdb:fee:d447%3: time<1ms
+Tracert/ Trace Route Tracert (Windows) or traceroute (Linux) is a network diagnostic and troubleshooting tool to view the route and measure transit delays of data packets in a network. It displays the number of hops between the source and destination devices based on the hop limit concept, modifying the Time To Live (TTL) values.
+
+A traceroute tool is useful to identify response delays (high latency), routing loops and points of failure or packet loss in a network.
+
+Traceroute is a command-line tool that is used to identify the route taken by packets as they travel between two devices on a network. It sends a series of packets to the target device with increasing time-to-live (TTL) values. Each packet is then returned by the next device on the route, along with the time taken for the packet to travel between the devices. Traceroute is commonly used to diagnose network routing issues and to identify the location of network congestion.
+
+Z:\>TRACERT nc1-65
+
+Tracing route to nc1-65.RVRCSE.LOCAL [fe80::d007:cdb:fee:d447%3]
+over a maximum of 30 hops:
+
+  1    <1 ms    <1 ms    <1 ms  nc1-65.RVRCSE.LOCAL [fe80::d007:cdb:fee:d447]
+
+Trace complete.
+Netsat Netstat is a command-line tool that is used to display network connection statistics for a device. It shows active connections, listening ports, and network interface statistics, among other things. Netstat is commonly used to diagnose network connectivity issues and to identify suspicious network activity.
+
+The netstat command is a highly practical tool for network diagnostics, configurations, and other port-scanning activities. More specifically, system administrators use it for network troubleshooting and performance diagnostics.
+
+The netstat command works on Microsoft Windows, Linux, Unix, FreeBSD, and more. Therefore, all the commands in this article will produce the same results irrespective of your operating system, unless otherwise stated for Linux.
+
+The Linux operating system comes with a considerable number of built-in capabilities preinstalled. Depending on their level of expertise, users may not be fully aware of the capabilities of a particular command. This article provides the basics of netstat and how to troubleshoot network issues with it.
+
+Functions
+
+We will learn how the netstat command functions by seeing its commonly used applications. We will see how to generate routing information, network interface statistics, or run portscanning operations with the command. It might be a good idea to take notes on the most frequently recurring options and what they do, because they will come in handy while working with other commands.
+
+Displaying kernel routing table
+
+Using the netstat command with the -r option lists the kernel routing information in the same way as with the route command.Note that the additional -n option is used to disable hostname lookup. It configures the netstat command to display addresses as dot-separated quad IP numbers instead of host and network names in the form of symbols.
+
+Z:\>netstat -a
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:135            nc1-65:0               LISTENING
+  TCP    0.0.0.0:445            nc1-65:0               LISTENING
+  TCP    0.0.0.0:808            nc1-65:0               LISTENING
+  TCP    0.0.0.0:3389           nc1-65:0               LISTENING
+  TCP    0.0.0.0:5040           nc1-65:0               LISTENING
+  TCP    0.0.0.0:6045           nc1-65:0               LISTENING
+  TCP    0.0.0.0:7680           nc1-65:0               LISTENING
+  TCP    0.0.0.0:49664          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49665          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49666          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49667          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49668          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49669          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49670          nc1-65:0               LISTENING
+  TCP    0.0.0.0:49673          nc1-65:0               LISTENING
+  TCP    10.6.1.65:139          nc1-65:0               LISTENING
+  TCP    10.6.1.65:56648        RVRCSE:microsoft-ds    ESTABLISHED
+  TCP    10.6.1.65:58943        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59087        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59149        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59578        RVRJCCENET1:8080       CLOSE_WAIT
+  TCP    10.6.1.65:59592        RVRJCCENET1:8080       CLOSE_WAIT
+  TCP    10.6.1.65:59593        RVRJCCENET1:8080       CLOSE_WAIT
+  TCP    10.6.1.65:59594        RVRJCCENET1:8080       CLOSE_WAIT
+  TCP    10.6.1.65:59595        RVRJCCENET1:8080       CLOSE_WAIT
+  TCP    10.6.1.65:59716        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59823        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59865        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59867        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59870        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59871        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59872        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59876        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59877        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59878        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59883        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59886        RVRJCCENET1:8080       TIME_WAIT
+  TCP    10.6.1.65:59887        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59890        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59891        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59892        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59893        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59894        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59895        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59896        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59898        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59899        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59900        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59925        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59955        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59961        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59962        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59965        RVRJCCENET1:8080       ESTABLISHED
+  TCP    10.6.1.65:59966        RVRJCCENET1:8080       ESTABLISHED
+  TCP    127.0.0.1:4281         nc1-65:0               LISTENING
+  TCP    [::]:135               nc1-65:0               LISTENING
+  TCP    [::]:445               nc1-65:0               LISTENING
+  TCP    [::]:808               nc1-65:0               LISTENING
+  TCP    [::]:3389              nc1-65:0               LISTENING
+  TCP    [::]:7680              nc1-65:0               LISTENING
+  TCP    [::]:49664             nc1-65:0               LISTENING
+  TCP    [::]:49665             nc1-65:0               LISTENING
+  TCP    [::]:49666             nc1-65:0               LISTENING
+  TCP    [::]:49667             nc1-65:0               LISTENING
+  TCP    [::]:49668             nc1-65:0               LISTENING
+  TCP    [::]:49669             nc1-65:0               LISTENING
+  TCP    [::]:49670             nc1-65:0               LISTENING
+  TCP    [::]:49673             nc1-65:0               LISTENING
+  UDP    0.0.0.0:123            *:*
+  UDP    0.0.0.0:3389           *:*
+  UDP    0.0.0.0:5050           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5355           *:*
+  UDP    10.6.1.65:137          *:*
+  UDP    10.6.1.65:138          *:*
+  UDP    10.6.1.65:1900         *:*
+  UDP    10.6.1.65:49567        *:*
+  UDP    127.0.0.1:1900         *:*
+  UDP    127.0.0.1:49568        *:*
+  UDP    127.0.0.1:56617        *:*
+  UDP    [::]:123               *:*
+  UDP    [::]:3389              *:*
+  UDP    [::]:5353              *:*
+  UDP    [::]:5353              *:*
+  UDP    [::]:5353              *:*
+  UDP    [::]:5355              *:*
+  UDP    [::1]:1900             *:*
+  UDP    [::1]:49566            *:*
+  UDP    [fe80::d007:cdb:fee:d447%3]:1900  *:*
+  UDP    [fe80::d007:cdb:fee:d447%3]:49565  *:*
+Telnet/ SSH Telnet or Secure Shell (SSH) utility allows you to troubleshoot issues by establishing a CLI session with Linux/Unix devices. It is a simple yet effective network troubleshooting tool that enables you to act on any alert by executing CLI commands to remediate L1/L2 network problems
+Z:\>telnet 10.1.1.210
+Ubuntu 17.04
+
+    ubunturvrit2
+    login:y20cb018                                                           
+    Password:
